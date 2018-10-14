@@ -7,7 +7,6 @@ body{
 
 h1{
     font-weight: 700;
-    font-size: 70px;
 }
 
 .jumbotron{
@@ -17,10 +16,12 @@ h1{
 }
 
 #result , #result1 , #result2{
+    font-weight: 700;
     color: blueviolet;
 }
 
 #probability , #probability1 , #probability2{
+    font-weight: 700;
     color: blueviolet;
 }
 
