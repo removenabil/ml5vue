@@ -28,3 +28,13 @@ h1{
 .classify_form{
     margin: 20px 0;
 }
+
+.errorlog{
+    font-size: 20px;
+    color: rgb(250, 0, 0)
+}
+
+.loading{
+    font-size: 20px;
+    color: blueviolet;
+}
