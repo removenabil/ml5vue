@@ -13,7 +13,7 @@ var app = new Vue({
 
             // MY FACE!!!
             imgsrc: "http://2.bp.blogspot.com/_pVSSnrgAXPY/TGDYQlH1_XI/AAAAAAAAAA4/qHZk2bd8gi0/s1600/Photo-0189.jpg",
-            
+
             repo: {
                 link: "https://github.com/rdhwnsh/ml5vue",
                 author: "Nabil Ridhwanshah"
@@ -25,8 +25,8 @@ var app = new Vue({
     methods: {
         changeImage() {
 
-
-            if (this.imgsrc.indexOf("jpg") > 0 || this.imgsrc.indexOf("png") > 0) {
+            // IMAGE VERIFICATION
+            if (this.imgsrc.indexOf(".jpg") > 0 || this.imgsrc.indexOf(".png") > 0) {
                 // Change the not valid image file to none
                 document.getElementsByClassName("notvalidimage")[0].style.display = "none";
 
