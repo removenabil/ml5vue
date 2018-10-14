@@ -1,42 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
+
     <head>
-      <title>Getting Started with ml5.js</title>
-      <script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js"></script>
+        <title>ml5vue</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js"></script>
     </head>
 
-  <body>
-    <h1>Image classification using MobileNet</h1>
-    <p>The MobileNet model labeled this as
-    <span id="result">...</span> with a confidence of
-    <span id="probability">...</span></p>
+<body>
 
-    <img src="https://i.imgur.com/m4bkC5g.jpg"
-     crossorigin="anonymous" id="image" width="400">
+    <div class="app">
 
-    <script>
-      // The image we want to classify
-      const image = document.getElementById('image');
-      // The result tag in the HTML
-      const result = document.getElementById('result');
-      // The probability tag in the HTML
-      const probability = document.getElementById('probability');
+        <div class="jumbotron">
 
-      // Initialize the Image Classifier method with MobileNet
-      const classifier = ml5.imageClassifier('MobileNet', function() {
-        console.log('Model Loaded!');
-      });
+            <div class="container">
+                <small>A project by Nabil Ridhwanshah (Vue)</p>
+                    <h1>
+                        <i class="fas fa-desktop"></i> ml5vue</h1>
+                    <p class="lead">Using the ml5 library with vue.js together.</p>
+                    <a :href="repo.link" target="_blank" class="btn btn-dark">Repo Link</a>
+            </div>
+        </div>
 
-      // Make a prediction with the selected image
-      // This will return an array with a default of 10 options with their probabilities
-      classifier.predict(image, function(err, results) {
+        <div class="container">
 
-        console.log(results[0].className)
-        console.log(Math.floor(results[0].probability * 100))
-          
-      });
+            <p>The MobileNet model labeled this as...</p>
 
-    </script>
-  </body>
+            <ul>
+                <li><span id="result">...</span> with a confidence of <span id="probability">...</span></li>
+                <li><span id="result1">...</span> with a confidence of <span id="probability1">...</span></li>
+                <li><span id="result2">...</span> with a confidence of <span id="probability2">...</span></li>
+            </ul>
+            
+
+            <!-- FORM -->
+            <div class="classify_form">
+                <div class="row">
+                    <!-- INPUT -->
+
+                    <div class="col-lg-10">
+                        <input type="text" v-model="imgsrc" placeholder="Enter Image (ending with .jpg / .png)" class="form-control">
+                    </div>
+
+                    <div class="col-lg-2">
+                        <!-- BUTTON -->
+                        <button @click="changeImage" class="btn btn-dark">
+                            <i class="fas fa-mouse-pointer"></i> Classify Image</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMAGE -->
+            <img src="https://i.imgur.com/m4bkC5g.jpg" crossorigin="anonymous" id="image" width="400" class="img img-thumbnail">
+
+        </div>
+    </div>
+
+    <!-- VUE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
 </html>
