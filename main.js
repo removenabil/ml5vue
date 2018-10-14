@@ -9,8 +9,10 @@ var app = new Vue({
     data() {
         return {
             imgsrc: "https://i.imgur.com/m4bkC5g.jpg",
-
-            classification: "",
+            repo:{
+                link: "https://github.com/rdhwnsh/ml5vue",
+                author: "Nabil Ridhwanshah"
+            }
 
         }
     },
@@ -29,15 +31,37 @@ var app = new Vue({
         classify_image(image) {
             classifier.predict(image, function (err, results) {
                 
-                // Result
+                // Result for default (0)
                 var result = results[0].className;
                 document.getElementById("result").innerHTML = result
                 console.log(results)
                 
-                // Probability in %
+                // Probability in % for default (0)
                 var probability = Math.floor(results[0].probability * 100) + "%";
                 console.log(probability)
                 document.getElementById("probability").innerHTML = probability
+
+                // =================================================
+                
+                // Result for 1
+                var result = results[1].className;
+                document.getElementById("result1").innerHTML = result
+                console.log(results)
+                
+                // Probability in % for 1
+                var probability = Math.floor(results[1].probability * 100) + "%";
+                console.log(probability)
+                document.getElementById("probability1").innerHTML = probability
+
+                // Result for 2
+                var result = results[02].className;
+                document.getElementById("result2").innerHTML = result
+                console.log(results)
+                
+                // Probability in % for 2
+                var probability = Math.floor(results[02].probability * 100) + "%";
+                console.log(probability)
+                document.getElementById("probability2").innerHTML = probability
             });
         }
     },

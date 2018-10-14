@@ -1,7 +1,29 @@
-#result{
-    color: red;
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+body{
+    font-family: 'Karla', sans-serif;
+    background: #ecf0f1;
 }
 
-#probability{
-    color: red;
+h1{
+    font-weight: 700;
+    font-size: 70px;
+}
+
+.jumbotron{
+    background: blueviolet;
+    color: white;
+    border-radius: 0;
+}
+
+#result , #result1 , #result2{
+    color: blueviolet;
+}
+
+#probability , #probability1 , #probability2{
+    color: blueviolet;
+}
+
+.classify_form{
+    margin: 20px 0;
 }
